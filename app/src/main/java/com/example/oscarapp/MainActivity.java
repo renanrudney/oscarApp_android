@@ -63,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
                 @Override
                 public void onFailure(Call<Token> call, Throwable t) {
                     progressDialog.dismiss();
-                    Toast.makeText(getApplicationContext(), "Ocorreu um erro no servidor, tente novamente mais tarde!", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), "Ocorreu um erro inesperado, tente novamente mais tarde!", Toast.LENGTH_LONG).show();
                 }
             });
         } else {
