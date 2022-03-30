@@ -13,7 +13,8 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="Login"
-        android:inputType="textPersonName" />
+        android:inputType="textPersonName"
+        android:text="dev@local" />
 
     <EditText
         android:id="@+id/editPasswordInput"
@@ -21,8 +22,9 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="Senha"
-        android:inputType="textPersonName"
-        android:minHeight="48dp" />
+        android:inputType="textPassword"
+        android:minHeight="48dp"
+        android:text="123456" />
 
     <Button
         android:id="@+id/loginButton"

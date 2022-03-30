@@ -3,6 +3,7 @@ package com.example.oscarapp;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -12,6 +13,7 @@ import android.widget.Toast;
 import com.example.oscarapp.api.RetrofitConfig;
 import com.example.oscarapp.models.Token;
 import com.example.oscarapp.models.User;
+import com.example.oscarapp.views.WelcomeActivity;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -47,10 +49,13 @@ public class MainActivity extends AppCompatActivity {
                 @Override
                 public void onResponse(Call<Token> call, Response<Token> response) {
                     if (response.isSuccessful()) {
-                        Token token = response.body();
+                        Token tokenBody = response.body();
+                        String token = String.valueOf(tokenBody.getToken());
                         progressDialog.dismiss();
-//                        String filteredToken = String.valueOf(token.getToken());
-
+                        Intent welcomeIt = new Intent(getApplicationContext(), WelcomeActivity.class);
+                        welcomeIt.putExtra("token", token);
+                        startActivity(welcomeIt);
+                        finishAfterTransition();
                     } else if(response.code() == 403) {
                         progressDialog.dismiss();
                         Toast.makeText(getApplicationContext(), "Credenciais inválidas!", Toast.LENGTH_SHORT).show();
