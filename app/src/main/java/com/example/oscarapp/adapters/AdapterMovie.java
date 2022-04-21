@@ -28,7 +28,7 @@ public class AdapterMovie extends RecyclerView.Adapter<AdapterMovie.MyViewHolder
         public MyViewHolder(View view) {
             super(view);
             name = view.findViewById(R.id.nameView);
-//            gender = view.findViewById(R.id.genderView);
+            gender = view.findViewById(R.id.genderView);
 
         }
     }
@@ -43,8 +43,8 @@ public class AdapterMovie extends RecyclerView.Adapter<AdapterMovie.MyViewHolder
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         Movie obj = listMovie.get(position);
-        holder.name.setText(obj.getName());
-//        holder.gender.setText(obj.getGender());
+        holder.name.setText(obj.getNome());
+        holder.gender.setText(obj.getGenero());
     }
 
     @Override

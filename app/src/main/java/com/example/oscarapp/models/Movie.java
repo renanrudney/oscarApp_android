@@ -2,16 +2,7 @@ package com.example.oscarapp.models;
 
 public class Movie {
     private int id;
-    private String name;
-    private String gender;
-    private String photo_url;
-
-    public Movie(int id, String name, String gender, String photo_url) {
-        this.id = id;
-        this.name = name;
-        this.gender = gender;
-        this.photo_url = photo_url;
-    }
+    String nome, genero, foto;
 
     public int getId() {
         return id;
@@ -21,27 +12,27 @@ public class Movie {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getNome() {
+        return nome;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
-    public String getGender() {
-        return gender;
+    public String getGenero() {
+        return genero;
     }
 
-    public void setGender(String gender) {
-        this.gender = gender;
+    public void setGenero(String genero) {
+        this.genero = genero;
     }
 
-    public String getPhoto_url() {
-        return photo_url;
+    public String getFoto() {
+        return foto;
     }
 
-    public void setPhoto_url(String photo_url) {
-        this.photo_url = photo_url;
+    public void setFoto(String foto) {
+        this.foto = foto;
     }
 }
