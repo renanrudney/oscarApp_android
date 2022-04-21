@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
                         Intent welcomeIt = new Intent(getApplicationContext(), WelcomeActivity.class);
                         welcomeIt.putExtra("token", token);
                         startActivity(welcomeIt);
-                        finishAfterTransition();
+                        finish();
                     } else if(response.code() == 403) {
                         progressDialog.dismiss();
                         Toast.makeText(getApplicationContext(), "Credenciais inválidas!", Toast.LENGTH_SHORT).show();

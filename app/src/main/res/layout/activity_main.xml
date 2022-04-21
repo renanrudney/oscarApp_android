@@ -4,8 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_margin="16dp"
+    android:gravity="center"
     android:orientation="vertical"
-    tools:context=".MainActivity" >
+    tools:context=".MainActivity">
 
     <EditText
         android:id="@+id/editLoginInput"
@@ -14,6 +16,7 @@
         android:ems="10"
         android:hint="Login"
         android:inputType="textPersonName"
+        android:minHeight="48dp"
         android:text="dev@local" />
 
     <EditText

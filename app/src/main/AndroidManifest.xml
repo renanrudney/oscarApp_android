@@ -12,6 +12,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.OscarApp">
         <activity
+            android:name=".views.ConfirmActivity"
+            android:exported="false" />
+        <activity
+            android:name=".views.DirectorActivity"
+            android:exported="false" />
+        <activity
+            android:name=".views.MovieActivity"
+            android:exported="false" />
+        <activity
             android:name=".views.WelcomeActivity"
             android:exported="false" />
         <activity
