@@ -1,10 +1,10 @@
 package com.example.oscarapp.adapters;
 
-import android.graphics.Bitmap;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -26,12 +26,14 @@ public class AdapterMovie extends RecyclerView.Adapter<AdapterMovie.MyViewHolder
     public class MyViewHolder extends RecyclerView.ViewHolder {
         TextView name, gender;
         ImageView photo;
+        ProgressBar progressBar;
 
         public MyViewHolder(View view) {
             super(view);
             name = view.findViewById(R.id.nameView);
             gender = view.findViewById(R.id.genderView);
-
+            photo = view.findViewById(R.id.imageViewMovie);
+            progressBar = view.findViewById(R.id.progressBarMovie);
         }
     }
 
@@ -47,10 +49,8 @@ public class AdapterMovie extends RecyclerView.Adapter<AdapterMovie.MyViewHolder
         Movie obj = listMovie.get(position);
         holder.name.setText(obj.getNome());
         holder.gender.setText(obj.getGenero());
-        // TODO: Ver maneiras de baixar as imagens de maneira assíncrona
-//        ImageAsyncTask task = new ImageAsyncTask();
-//        Bitmap image = task.execute(obj.getFoto());
-//        holder.photo.setImageBitmap(image);
+        ImageAsyncTask task = new ImageAsyncTask(holder.progressBar, holder.photo);
+        task.execute(obj.getFoto());
     }
 
     @Override
