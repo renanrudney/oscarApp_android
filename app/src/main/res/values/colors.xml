@@ -5,6 +5,8 @@
     <color name="purple_700">#FF3700B3</color>
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
-    <color name="black">#FF000000</color>
+    <color name="black">#110e0e</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="yellow_oscar_logo">#B49030</color>
+    <color name="yellow">#dfca4e</color>
 </resources>

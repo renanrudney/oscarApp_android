@@ -35,6 +35,7 @@ public class MovieActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_movie);
+        setTitle("OscarApp - Filmes indicados");
         recyclerViewMovie = findViewById(R.id.recyclerViewMovie);
 
         ProgressDialog progressDialog = new ProgressDialog(this);

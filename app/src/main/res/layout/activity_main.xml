@@ -1,39 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="16dp"
+    android:background="@color/black"
     android:gravity="center"
-    android:orientation="vertical"
+    android:padding="16dp"
     tools:context=".MainActivity">
 
     <EditText
         android:id="@+id/editLoginInput"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="1dp"
+        android:backgroundTint="@color/yellow"
         android:ems="10"
-        android:hint="Login"
+        android:hint="Insira seu login"
         android:inputType="textPersonName"
         android:minHeight="48dp"
-        android:text="dev@local" />
+        android:textColor="@color/yellow"
+        android:textColorHighlight="@color/yellow"
+        android:textColorHint="@color/yellow_oscar_logo"
+        android:textColorLink="@color/yellow"
+        app:layout_constraintBottom_toTopOf="@+id/editPasswordInput"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed" />
 
     <EditText
         android:id="@+id/editPasswordInput"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:backgroundTint="@color/yellow"
         android:ems="10"
-        android:hint="Senha"
+        android:hint="Insira sua senha"
         android:inputType="textPassword"
         android:minHeight="48dp"
-        android:text="123456" />
+        android:textColor="@color/yellow"
+        android:textColorHighlight="@color/yellow"
+        android:textColorHint="@color/yellow_oscar_logo"
+        android:textColorLink="@color/yellow"
+        app:layout_constraintBottom_toTopOf="@+id/loginButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editLoginInput" />
 
     <Button
         android:id="@+id/loginButton"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:backgroundTint="#B49030"
         android:onClick="getData"
-        android:text="Login" />
+        android:text="Entrar"
+        android:textColor="@android:color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editPasswordInput" />
 
-</LinearLayout>
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="317dp"
+        android:layout_height="220dp"
+        app:layout_constraintBottom_toTopOf="@+id/editLoginInput"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/oscar_logo" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

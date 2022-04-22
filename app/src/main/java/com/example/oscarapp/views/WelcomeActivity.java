@@ -33,17 +33,20 @@ public class WelcomeActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        if(item.getItemId() == R.id.film_choice) {
-            Intent it = new Intent(getApplicationContext(), MovieActivity.class);
-            startActivity(it);
-        }
-        if(item.getItemId() == R.id.director_choice) {
-            Intent it = new Intent(getApplicationContext(), DirectorActivity.class);
-            startActivity(it);
-        }
-        if(item.getItemId() == R.id.confirm_choice) {
-            Intent it = new Intent(getApplicationContext(), ConfirmActivity.class);
-            startActivity(it);
+        Intent it;
+        switch (item.getItemId()) {
+            case R.id.film_choice:
+                it = new Intent(getApplicationContext(), MovieActivity.class);
+                startActivity(it);
+                break;
+            case R.id.director_choice:
+                it = new Intent(getApplicationContext(), DirectorActivity.class);
+                startActivity(it);
+                break;
+            case R.id.confirm_choice:
+                it = new Intent(getApplicationContext(), ConfirmActivity.class);
+                startActivity(it);
+                break;
         }
         return super.onOptionsItemSelected(item);
     }

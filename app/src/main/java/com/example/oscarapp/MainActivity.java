@@ -28,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        getSupportActionBar().hide();
     }
 
     public void getData(View view) {
@@ -56,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
                         welcomeIt.putExtra("token", token);
                         startActivity(welcomeIt);
                         finish();
-                    } else if(response.code() == 403) {
+                    } else if(response.code() == 401) {
                         progressDialog.dismiss();
                         Toast.makeText(getApplicationContext(), "Credenciais inválidas!", Toast.LENGTH_SHORT).show();
                     } else {
