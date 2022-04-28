@@ -2,11 +2,11 @@ package com.example.oscarapp.models;
 
 public class Director {
     private int id;
-    private String name;
+    private String nome;
 
-    public Director(int id, String name) {
+    public Director(int id, String nome) {
         this.id = id;
-        this.name = name;
+        this.nome = nome;
     }
 
     public int getId() {
@@ -17,11 +17,11 @@ public class Director {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getNome() {
+        return nome;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 }

@@ -16,4 +16,7 @@ public class ExternalConfig {
     public MovieService getMovieService() {
         return this.retrofit.create(MovieService.class);
     }
+    public DirectorService getDirectorService() {
+        return this.retrofit.create(DirectorService.class);
+    }
 }
