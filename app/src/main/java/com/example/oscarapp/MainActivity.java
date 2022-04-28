@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
             User user = new User(login, password);
 
             ProgressDialog progressDialog = new ProgressDialog(this);
-            progressDialog.setMessage("Consultando token");
+            progressDialog.setMessage("Realizando login");
             progressDialog.show();
 
             Call<Token> call = new RetrofitConfig().getUserService().getToken(user);

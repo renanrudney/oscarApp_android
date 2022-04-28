@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -62,7 +63,13 @@ public class MovieActivity extends AppCompatActivity {
                                         @Override
                                         public void onItemClick(View view, int position) {
                                             Movie obj = listMovie.get(position);
-                                            Toast.makeText(getApplicationContext(), "Selecionado "+ obj.getNome(), Toast.LENGTH_SHORT).show();
+                                            Intent it = new Intent(getApplicationContext(), DetailMovieActivity.class);
+                                            Bundle params = new Bundle();
+                                            params.putString("name", obj.getNome());
+                                            params.putString("gender", obj.getGenero());
+                                            params.putString("photo_url", obj.getFoto());
+                                            it.putExtras(params);
+                                            startActivity(it);
                                         }
                                         @Override
                                         public void onLongItemClick(View view, int position) {
