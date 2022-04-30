@@ -2,7 +2,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/film_choice"
+        android:id="@+id/movie_choice"
         android:title="Votar Filme" />
     <item
         android:id="@+id/director_choice"
@@ -10,4 +10,7 @@
     <item
         android:id="@+id/confirm_choice"
         android:title="Confirmar Voto" />
+    <item
+        android:id="@+id/exit"
+        android:title="Sair" />
 </menu>

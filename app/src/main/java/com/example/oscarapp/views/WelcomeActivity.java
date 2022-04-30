@@ -9,20 +9,24 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
 
+import com.example.oscarapp.MainActivity;
 import com.example.oscarapp.R;
+import com.example.oscarapp.models.Choice;
 
 public class WelcomeActivity extends AppCompatActivity {
-    TextView tokenView;
+    TextView tokenView, userView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome);
         tokenView = findViewById(R.id.tokenView);
+        userView = findViewById(R.id.userView);
 
-        Intent it = getIntent();
-        String token = it.getStringExtra("token");
+        String token = Choice.token;
+        String user = Choice.user;
         tokenView.setText(token);
+        userView.setText(user);
     }
 
     @Override
@@ -35,7 +39,7 @@ public class WelcomeActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         Intent it;
         switch (item.getItemId()) {
-            case R.id.film_choice:
+            case R.id.movie_choice:
                 it = new Intent(getApplicationContext(), MovieActivity.class);
                 startActivity(it);
                 break;
@@ -46,6 +50,11 @@ public class WelcomeActivity extends AppCompatActivity {
             case R.id.confirm_choice:
                 it = new Intent(getApplicationContext(), ConfirmActivity.class);
                 startActivity(it);
+                break;
+            case R.id.exit:
+                it = new Intent(getApplicationContext(), MainActivity.class);
+                startActivity(it);
+                finish();
                 break;
         }
         return super.onOptionsItemSelected(item);

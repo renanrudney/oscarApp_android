@@ -21,6 +21,7 @@ import com.example.oscarapp.api.RetrofitConfig;
 import com.example.oscarapp.helpers.RecyclerItemClickListener;
 import com.example.oscarapp.models.Movie;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -64,11 +65,7 @@ public class MovieActivity extends AppCompatActivity {
                                         public void onItemClick(View view, int position) {
                                             Movie obj = listMovie.get(position);
                                             Intent it = new Intent(getApplicationContext(), DetailMovieActivity.class);
-                                            Bundle params = new Bundle();
-                                            params.putString("name", obj.getNome());
-                                            params.putString("gender", obj.getGenero());
-                                            params.putString("photo_url", obj.getFoto());
-                                            it.putExtras(params);
+                                            it.putExtra("movie", obj);
                                             startActivity(it);
                                         }
                                         @Override

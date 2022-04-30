@@ -11,6 +11,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.oscarapp.api.RetrofitConfig;
+import com.example.oscarapp.models.Choice;
 import com.example.oscarapp.models.Token;
 import com.example.oscarapp.models.User;
 import com.example.oscarapp.views.WelcomeActivity;
@@ -54,7 +55,8 @@ public class MainActivity extends AppCompatActivity {
                         String token = String.valueOf(tokenBody.getToken());
                         progressDialog.dismiss();
                         Intent welcomeIt = new Intent(getApplicationContext(), WelcomeActivity.class);
-                        welcomeIt.putExtra("token", token);
+                        Choice.token = token;
+                        Choice.user = user.getLogin();
                         startActivity(welcomeIt);
                         finish();
                     } else if(response.code() == 401) {
@@ -77,4 +79,3 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 }
-//Apaga aqui Renan

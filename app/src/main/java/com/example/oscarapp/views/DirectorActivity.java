@@ -3,6 +3,7 @@ package com.example.oscarapp.views;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.LinearLayout;
@@ -12,6 +13,7 @@ import android.widget.Toast;
 
 import com.example.oscarapp.R;
 import com.example.oscarapp.api.ExternalConfig;
+import com.example.oscarapp.models.Choice;
 import com.example.oscarapp.models.Director;
 
 import java.util.ArrayList;
@@ -44,9 +46,10 @@ public class DirectorActivity extends AppCompatActivity {
                     listDirector = response.body();
                     RadioButton btn;
                     directorGroup.setOrientation(LinearLayout.VERTICAL);
+                    int index = 0;
                     for (final Director director : listDirector) {
                         btn = new RadioButton(DirectorActivity.this);
-                        btn.setId(View.generateViewId());
+                        btn.setId(index++);
                         btn.setText(director.getNome());
                         directorGroup.addView(btn);
                     }
@@ -62,6 +65,14 @@ public class DirectorActivity extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), "Ocorreu um erro inesperado, tente novamente mais tarde!", Toast.LENGTH_LONG).show();
             }
         });
+    }
 
+    public void choiceDirector(View view) {
+        int checkedRadioID = directorGroup.getCheckedRadioButtonId();
+        Director selectedDirector = listDirector.get(checkedRadioID);
+        Choice.selectedDirector = selectedDirector;
+        Intent it = new Intent(getApplicationContext(), WelcomeActivity.class);
+        startActivity(it);
+        finish();
     }
 }

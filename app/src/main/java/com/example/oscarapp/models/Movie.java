@@ -1,6 +1,8 @@
 package com.example.oscarapp.models;
 
-public class Movie {
+import java.io.Serializable;
+
+public class Movie implements Serializable {
     private int id;
     String nome, genero, foto;
 
