@@ -7,11 +7,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.oscarapp.api.RetrofitConfig;
-import com.example.oscarapp.models.Choice;
+import com.example.oscarapp.models.AppInfo;
 import com.example.oscarapp.models.Token;
 import com.example.oscarapp.models.User;
 import com.example.oscarapp.views.WelcomeActivity;
@@ -55,8 +54,8 @@ public class MainActivity extends AppCompatActivity {
                         String token = String.valueOf(tokenBody.getToken());
                         progressDialog.dismiss();
                         Intent welcomeIt = new Intent(getApplicationContext(), WelcomeActivity.class);
-                        Choice.token = token;
-                        Choice.user = user.getLogin();
+                        AppInfo.token = token;
+                        AppInfo.user = user.getLogin();
                         startActivity(welcomeIt);
                         finish();
                     } else if(response.code() == 401) {

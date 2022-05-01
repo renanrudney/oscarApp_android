@@ -38,14 +38,14 @@
         android:layout_marginEnd="4dp"
         android:layout_marginBottom="60dp"
         android:text="Gênero"
-        app:layout_constraintBottom_toTopOf="@+id/voteButton"
+        app:layout_constraintBottom_toTopOf="@+id/voteMovieButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/detailNameText" />
 
     <Button
-        android:id="@+id/voteButton"
+        android:id="@+id/voteMovieButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="137dp"

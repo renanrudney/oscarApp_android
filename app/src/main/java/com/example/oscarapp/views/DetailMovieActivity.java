@@ -5,13 +5,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.example.oscarapp.R;
 import com.example.oscarapp.helpers.ImageAsyncTask;
-import com.example.oscarapp.models.Choice;
+import com.example.oscarapp.models.AppInfo;
 import com.example.oscarapp.models.Movie;
 
 public class DetailMovieActivity extends AppCompatActivity {
@@ -39,7 +40,7 @@ public class DetailMovieActivity extends AppCompatActivity {
     }
 
     public void choiceMovie(View view) {
-        Choice.selectedMovie = movie;
+        AppInfo.selectedMovie = movie;
         Intent it = new Intent(getApplicationContext(), WelcomeActivity.class);
         startActivity(it);
         finish();

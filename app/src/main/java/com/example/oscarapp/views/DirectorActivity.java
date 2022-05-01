@@ -2,6 +2,7 @@ package com.example.oscarapp.views;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,7 +14,7 @@ import android.widget.Toast;
 
 import com.example.oscarapp.R;
 import com.example.oscarapp.api.ExternalConfig;
-import com.example.oscarapp.models.Choice;
+import com.example.oscarapp.models.AppInfo;
 import com.example.oscarapp.models.Director;
 
 import java.util.ArrayList;
@@ -69,10 +70,21 @@ public class DirectorActivity extends AppCompatActivity {
 
     public void choiceDirector(View view) {
         int checkedRadioID = directorGroup.getCheckedRadioButtonId();
-        Director selectedDirector = listDirector.get(checkedRadioID);
-        Choice.selectedDirector = selectedDirector;
-        Intent it = new Intent(getApplicationContext(), WelcomeActivity.class);
-        startActivity(it);
-        finish();
+        if (checkedRadioID == -1) {
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setMessage("Você precisa escolher um diretor!");
+
+            builder.setPositiveButton(
+                    "Ok",
+                    (dialog, id) -> dialog.cancel());
+
+            AlertDialog alert = builder.create();
+            alert.show();
+        } else {
+            AppInfo.selectedDirector = listDirector.get(checkedRadioID);
+            Intent it = new Intent(getApplicationContext(), WelcomeActivity.class);
+            startActivity(it);
+            finish();
+        }
     }
 }

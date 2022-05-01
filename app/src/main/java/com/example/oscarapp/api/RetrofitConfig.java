@@ -16,4 +16,7 @@ public class RetrofitConfig {
     public UserService getUserService() {
         return this.retrofit.create(UserService.class);
     }
+    public ChoiceService getChoiceService() {
+        return this.retrofit.create(ChoiceService.class);
+    }
 }
